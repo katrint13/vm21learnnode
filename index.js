@@ -10,7 +10,36 @@ nunjucks.configure('views', {
 });
 
 app.get('/', (req, res) => {
-    
+  res.render('index.njk',{
+  
+  });
+  
+});
+app.get('/greeting', (req, res) => {
+  console.log(req.query.name);
+  res.render('greeting.njk',{
+    name: req.query.name,
+    age: req.query.age
+  });
+  
+});
+
+app.get('/about', (req, res) => {
+  res.render('about.njk');
+});
+
+app.get('/contact', (req, res) => {
+  res.render('contact.njk');
+});
+
+app.get('/gallery', (req, res) => {
+  res.render('gallery.njk');
+});
+
+app.get('/values', (req, res) => {
+  res.render('values.njk');
+});
+app.get('/', (req, res) => {
   res.render('index.njk');
 });
 
